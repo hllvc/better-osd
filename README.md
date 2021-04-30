@@ -1,7 +1,6 @@
 # Better OSD (GNOME 40 Extension)
 
 A GNOME Shell extension allowing the user to set the position, size and delay of the OSD windows for sound or luminosity.
-Also adds transparency.
 
 ## Installation
 
@@ -9,16 +8,24 @@ Also adds transparency.
 
 > How to manually install the extension ?
 
-Download files and put them in an `better-osd` folder to `~/.local/share/gnome-shell/extensions/`
+```
+git clone https://github.com/hllvc/better-osd.git \
+	~/.local/share/gnome-shell/extensions/better-osd
+```
 
-You may need to restart the gnome shell environnment ("logout and login again", or alt+f2 + r + enter).
+You may need to restart the gnome shell environnment
+You may need to restart the gnome shell environnment \
 
-## Screenshot
+- logout and login again _or_
+- `alt+f2` then type `r` and `enter`
 
-![Screenshot]()
+## Screenshots
+
+![Screenshot](img/img1.png)
+![Screenshot](img/img2.png)
 
 ## Details
 
-The original OSD source code is around these lines: https://github.com/GNOME/gnome-shell/blob/master/js/ui/osdWindow.js#L194.
+This is forked version modified to work with GNOME 40 from [here](https://extensions.gnome.org/extension/1345/better-osd/).
 
-This is forked version modified to work with Gnome 40 from [here](https://extensions.gnome.org/extension/1345/better-osd/).
+!! it does not have transparency as the original !!
