@@ -1,15 +1,15 @@
-const Lang = imports.lang;
 const Main = imports.ui.main;
 const OsdWindow = imports.ui.osdWindow;
 const OsdWindowManager = Main.osdWindowManager;
 
 const ExtensionUtils = imports.misc.extensionUtils;
 const Me = ExtensionUtils.getCurrentExtension();
-const Convenience = Me.imports.convenience;
 
 //------------------------------------------------
 
-function init() {}
+function init() {
+  ExtensionUtils.initTranslations();
+}
 
 //------------------------------------------------
 
@@ -61,15 +61,12 @@ let _id;
 //---------------------------------------------
 
 function enable() {
-  let _settings = Convenience.getSettings(
+  let _settings = ExtensionUtils.getSettings(
     "org.gnome.shell.extensions.better-osd"
   );
 
   style();
-  _id = Main.layoutManager.connect(
-    "monitors-changed",
-    Lang.bind(this, this.style)
-  );
+  _id = Main.layoutManager.connect("monitors-changed", this.style.bind(this));
 
   injections["show"] = injectToFunction(
     OsdWindow.OsdWindow.prototype,
