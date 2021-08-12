@@ -1,11 +1,33 @@
+const Gio = imports.gi.Gio;
+const ExtensionUtils = imports.misc.extensionUtils;
+const Me = ExtensionUtils.getCurrentExtension();
+
 const Lang = imports.lang;
 const Main = imports.ui.main;
 const OsdWindow = imports.ui.osdWindow;
 const OsdWindowManager = Main.osdWindowManager;
 
-const ExtensionUtils = imports.misc.extensionUtils;
-const Me = ExtensionUtils.getCurrentExtension();
 const Convenience = Me.imports.convenience;
+
+//------------------------------------------------
+
+// function getSettings() {
+//   let GioSSS = Gio.SettingsSchemaSource;
+//   let schemSource = GioSSS.new_from_directory(
+//     Me.dir.get_child("schema").get_path(),
+//     GioSSS.get_default(),
+//     false
+//   );
+//   let schemaObj = schemSource.lookup(
+//     ("org.gnome.shell.extensions.better-osd", true)
+//   );
+//   if (!schemaObj) {
+//     throw new Error("cannot find schemas");
+//   }
+//   return new Gio.Settings({
+//     settings_schema: schemaObj,
+//   });
+// }
 
 //------------------------------------------------
 
@@ -67,7 +89,6 @@ function enable() {
     "org.gnome.shell.extensions.better-osd"
   );
 
-  style();
   _id = Main.layoutManager.connect(
     "monitors-changed",
     Lang.bind(this, this.style)
@@ -82,6 +103,8 @@ function enable() {
       let v_percent = _settings.get_int("vertical");
       let osd_size = _settings.get_int("size");
       let hide_delay = _settings.get_int("delay");
+      let transparency = _settings.get_boolean("transparency");
+      transparency ? style() : nostyle();
 
       this._box.translation_x = (h_percent * monitor.width) / 100;
       this._box.translation_y = (v_percent * monitor.height) / 100;

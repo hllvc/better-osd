@@ -14,7 +14,6 @@ git clone https://github.com/hllvc/better-osd.git \
 ```
 
 You may need to restart the gnome shell environnment
-You may need to restart the gnome shell environnment \
 
 - logout and login again _or_
 - `alt+f2` then type `r` and `enter`
