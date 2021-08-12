@@ -7,19 +7,24 @@
       <description>The percentage of the screen width (from the center of the screen) at which the OSD will be displayed.</description>
     </key>
     <key type="i" name="vertical">
-      <default>25</default>
+      <default>0</default>
       <summary>Vertical shifting (%)</summary>
       <description>The percentage of the screen height (from the center of the screen) at which the OSD will be displayed.</description>
     </key>
     <key type="i" name="size">
-      <default>20</default>
+      <default>15</default>
       <summary>OSD size (screen %)</summary>
       <description>Relative OSD size.</description>
     </key>
     <key type="i" name="delay">
-      <default>1500</default>
+      <default>1000</default>
       <summary>Hide delay (ms)</summary>
       <description>How long the OSD will be displayed.</description>
     </key>
+		<key type="b" name="transparency">
+			<default>false</default>
+			<summary>Transparency toggle</summary>
+			<description>Toggle OSD transparency to on/off.</description>
+		</key>
   </schema>
 </schemalist>

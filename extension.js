@@ -9,9 +9,7 @@ const Convenience = Me.imports.convenience;
 
 //------------------------------------------------
 
-function init() {
-  Convenience.initTranslations();
-}
+function init() {}
 
 //------------------------------------------------
 
@@ -82,6 +80,8 @@ function enable() {
       let v_percent = _settings.get_int("vertical");
       let osd_size = _settings.get_int("size");
       let hide_delay = _settings.get_int("delay");
+      let transparency = _settings.get_boolean("transparency");
+      transparency ? style() : unstyle();
 
       this._box.translation_x = (h_percent * monitor.width) / 100;
       this._box.translation_y = (v_percent * monitor.height) / 100;

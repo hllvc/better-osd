@@ -11,9 +11,7 @@ const Convenience = Me.imports.convenience;
 
 //-----------------------------------------------
 
-function init() {
-  Convenience.initTranslations();
-}
+function init() {}
 
 //-----------------------------------------------
 
@@ -162,6 +160,35 @@ const OSDSettingsWidget = new GObject.Class({
     );
     delayBox.append(hideDelay);
     this.append(delayBox);
+
+    //-------------------------------------------------------
+
+    let labelTransparency = _("Transparency:");
+
+    let switchTransparency = new Gtk.Switch();
+    switchTransparency.set_active(this._settings.get_boolean("transparency"));
+
+    switchTransparency.connect(
+      "state-set",
+      Lang.bind(this, function (w) {
+        var value = w.get_active();
+        this._settings.set_boolean("transparency", value);
+      })
+    );
+
+    let transparencyBox = new Gtk.Box({
+      orientation: Gtk.Orientation.HORIZONTAL,
+      spacing: 15,
+    });
+    transparencyBox.prepend(
+      new Gtk.Label({
+        label: labelTransparency,
+        use_markup: true,
+        halign: Gtk.Align.START,
+      })
+    );
+    transparencyBox.append(switchTransparency);
+    this.append(transparencyBox);
   },
 });
 

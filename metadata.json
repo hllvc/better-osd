@@ -1,9 +1,9 @@
 {
-  "description": "Better OSD for Gnome 40 (move and resize the OSD popups).\n\nYou think the default volume popup is too big, and stays for too long? This allows you to move it out of the way, reduce its size, add transparency and set the hiding delay.",
+  "name": "Better-OSD - 40",
+  "description": "Customize your OSD winodw.",
   "gettext-domain": "better-osd",
-  "name": "Better OSD - Gnome 40",
-  "shell-version": ["40"],
-  "url": "https://github.com/hllvc/better-osd",
   "uuid": "better-osd@hllvc",
-  "version": 1.0
+  "url": "https://github.com/hllvc/better-osd",
+  "shell-version": ["40", "40.1", "40.1", "40.3"],
+  "version": 2.0
 }
