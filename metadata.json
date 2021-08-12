@@ -1,7 +1,6 @@
 {
-  "name": "Better-OSD - 40",
-  "description": "Customize your OSD winodw.",
-  "gettext-domain": "better-osd",
+  "name": "Better OSD - Gnome 40",
+  "description": "Customize your OSD popups. Move, resize, set delay and transparency!",
   "uuid": "better-osd@hllvc",
   "url": "https://github.com/hllvc/better-osd",
   "shell-version": ["40", "40.1", "40.1", "40.3"],
